@@ -1,6 +1,6 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Alert, Box, Button, Card, Typography } from "@mui/material";
 import PrimaryButton from "../components/buttons/PrimaryButton";
 import { useState } from "react";
 import UserModal from "../components/modals/UserModal";
@@ -15,6 +15,7 @@ const Home = () => {
   // const handleClose = () => {
   //   setOpen(false);
   // };
+  const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const handleData = () => {
@@ -28,15 +29,24 @@ const Home = () => {
 
       axios
         .post(url, fData)
-        .then(() => alert("successfully updated"))
+        .then((response) => {
+          setName("");
+          setEmail("");
+          alert("successfully updated "+ response);
+        })
         .catch((e) => alert(e.message));
+    } else {
+      setError(true);
     }
   };
   const inputs = [
     {
       type: "email",
       value: email,
-      onChange: (e) => setEmail(e.target.value),
+      onChange: (e) => {
+        setEmail(e.target.value);
+        setError(false);
+      },
       placeholder: "abc@gmail.com",
       startDecorator: <EmailIcon sx={{ color: "#04030F" }} />,
       name: "email",
@@ -44,7 +54,10 @@ const Home = () => {
     {
       type: "text",
       value: name,
-      onChange: (e) => setName(e.target.value),
+      onChange: (e) => {
+        setName(e.target.value);
+        setError(false);
+      },
       placeholder: "mad coder",
       startDecorator: <PersonIcon sx={{ color: "#04030F" }} />,
       name: "name",
@@ -61,11 +74,6 @@ const Home = () => {
         color: "#fff",
       }}
     >
-      {/* <Typography variant="h3">Hammad</Typography> */}
-      {/* <PrimaryButton onClick={() => setOpen(!open)} /> */}
-      {/* {open && <Typography variant="h2">{open.toString()}</Typography>}  */}
-      {/* {open && <UserModal open={open} onClose={handleClose} />} */}
-
       <Card
         sx={{
           padding: 5,
@@ -105,7 +113,12 @@ const Home = () => {
             startDecorator={data.startDecorator}
           />
         ))}
-        <Button variant="contained" onClick={handleData}>
+        {error && (
+          <Alert severity="error" variant="outlined">
+            Please fill all fields!
+          </Alert>
+        )}
+        <Button variant="text" onClick={handleData} sx={{ marginY: 3, color: '#04030F', backgroundColor: '#fff', fontWeight: 'bold', '&:hover': {backgroundColor: '#fffa'} }}>
           submit
         </Button>
       </Card>
