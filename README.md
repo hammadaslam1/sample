@@ -1,4 +1,4 @@
-# score-pulse
+# sample
 
 - At first copy the **advWeb** folder and paste that to your htdocs directory then run your **XAMPP Server** 
 - After that run your react app using **npm run start** in your directory's node terminal
