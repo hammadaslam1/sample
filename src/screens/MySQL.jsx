@@ -10,7 +10,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import PrimaryInput from "../components/inputs/PrimaryInput";
 import axios from "axios";
 
-const Home = () => {
+const MySQL = () => {
   // const [open, setOpen] = useState(false);
   // const handleClose = () => {
   //   setOpen(false);
@@ -85,7 +85,7 @@ const Home = () => {
         elevation={10}
       >
         <Typography variant="h4" sx={{ textAlign: "center" }}>
-          User Data
+          MySQL
         </Typography>
         {/* <PrimaryInput
           // variant="plain"
@@ -126,4 +126,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MySQL;

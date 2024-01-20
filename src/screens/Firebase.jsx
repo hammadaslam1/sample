@@ -6,7 +6,7 @@ import PrimaryInput from "../components/inputs/PrimaryInput";
 import { getDatabase, ref, set } from "firebase/database";
 import { app } from "../firebase/firebase";
 
-const Form = () => {
+const Firebase = () => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -71,7 +71,7 @@ const Form = () => {
         elevation={10}
       >
         <Typography variant="h4" sx={{ textAlign: "center" }}>
-          User Data
+          Firebase
         </Typography>
         {inputs.map((data, i) => (
           <PrimaryInput
@@ -106,4 +106,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Firebase;
