@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { Alert, Button, Card, Typography } from "@mui/material";
 import { useState } from "react";
 import EmailIcon from "@mui/icons-material/Email";
 import PersonIcon from "@mui/icons-material/Person";
 import PrimaryInput from "../components/inputs/PrimaryInput";
 import { getDatabase, ref, set } from "firebase/database";
-import { app } from "../firebase/firebase";
+import { database } from "../firebase/firebase";
 
 const Firebase = () => {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const database = getDatabase(app);
+  // const database = getDatabase(app);
   const inputs = [
     {
       type: "email",
@@ -37,11 +38,11 @@ const Firebase = () => {
   ];
 
   const handleData = () => {
-    const currentTime = new Date().getTime()
-    set(ref(database, 'users/'+currentTime), {
-        name: name,
-        email: email,
-      })
+    const currentTime = new Date().getTime();
+    set(ref(database, "users/" + currentTime), {
+      name: name,
+      email: email,
+    })
       .then(() => {
         alert("successfully updated");
       })
