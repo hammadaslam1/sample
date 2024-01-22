@@ -21,6 +21,7 @@ const Navbar = () => {
       if (auth.currentUser) {
         // auth.currentUser.displayName = 'hammad'
         setUser(true);
+
         // setOpenLogin(false);
       } else {
         setUser(false);
@@ -38,7 +39,10 @@ const Navbar = () => {
       >
         <div
           style={{
-            position: "absolute",
+            backgroundColor: "#656256",
+            zIndex:2,
+            position: "sticky",
+            top: 0,
             display: "flex",
             width: "100%",
             justifyContent: "space-evenly",
