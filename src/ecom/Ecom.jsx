@@ -2,10 +2,9 @@ import { Navbar } from "react-bootstrap";
 
 const Ecom = () => {
   return (
-    <div className="d-flex ">
-      <div>
-        <button className="btn-lg btn">save now</button>
-      </div>
+    // get links from react router dom styled with bootstrap
+    <div>
+      
     </div>
   );
 };

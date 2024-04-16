@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Lab07 from "./router/Lab07";

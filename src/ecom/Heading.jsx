@@ -1,7 +1,7 @@
 const Heading = () => {
   return (
     // get heading 'Managing Products' in react bootstrap
-    <h1 className="text-center">Managing Products</h1>
+    <h1 className="text-center">Manage Products</h1>
   );
 };
 

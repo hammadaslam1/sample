@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Ecom from "../ecom/Ecom";
-import Navbar from "../ecom/Navbar";
 import Heading from "../ecom/Heading";
+import EcomNavbar from "../ecom/Navbar";
+import Register from "../ecom/Register";
 
 const EcomRouter = () => {
   return (
     <BrowserRouter>
       <Heading />
-      <Navbar />
+      <EcomNavbar />
       <Routes>
-        <Route path="/" element={<Ecom />} />
+        <Route exact path="/" element={<Ecom />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
