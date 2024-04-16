@@ -3,6 +3,7 @@ import Ecom from "../ecom/Ecom";
 import Heading from "../ecom/Heading";
 import EcomNavbar from "../ecom/Navbar";
 import Register from "../ecom/Register";
+import Login from "../ecom/Login";
 
 const EcomRouter = () => {
   return (
@@ -10,7 +11,7 @@ const EcomRouter = () => {
       <Heading />
       <EcomNavbar />
       <Routes>
-        <Route exact path="/" element={<Ecom />} />
+        <Route exact path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

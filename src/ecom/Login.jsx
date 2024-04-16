@@ -1,29 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
   return (
-    // get a registration form in react bootstrap
+    // get login form in react bootstrap
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card">
-            <div className="card-header fs-3">Register</div>
+            <div className="card-header fs-3">Login</div>
             <div className="card-body">
               <form>
-                <div className="form-group row my-3">
-                  <label
-                    htmlFor="name"
-                    className="col-md-4 col-form-label text-md-right"
-                  >
-                    Name
-                  </label>
-
-                  <div className="col-md-6">
-                    <input id="name" type="text" className="form-control" />
-                  </div>
-                </div>
-
                 <div className="form-group row my-3">
                   <label
                     htmlFor="email"
@@ -53,26 +40,10 @@ const Register = () => {
                     />
                   </div>
                 </div>
-                <div className="form-group row my-3">
-                  <label
-                    htmlFor="confirmPassword"
-                    className="col-md-4 col-form-label text-md-right"
-                  >
-                    Confirm Password
-                  </label>
-
-                  <div className="col-md-6">
-                    <input
-                      id="confirmPassword"
-                      type="password"
-                      className="form-control"
-                    />
-                  </div>
-                </div>
 
                 <div className="form-group  my-3 mb-0">
                   <button type="submit" className="btn btn-primary">
-                    Register
+                    Login
                   </button>
                 </div>
               </form>
@@ -81,9 +52,9 @@ const Register = () => {
               <button
                 type="submit"
                 className="btn btn-primary"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/register")}
               >
-                Login
+                Register
               </button>
             </div>
           </div>
@@ -93,4 +64,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

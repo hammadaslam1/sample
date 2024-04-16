@@ -2,33 +2,49 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 const EcomNavbar = () => {
   return (
     // get navbar in react bootstrap
     <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand className="fw-bold" href="#home">
+        <div className="fs-4 me-5 fw-medium" href="#home">
           E-Commerce
-        </Navbar.Brand>
+        </div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link className="mx-2 px-2" href="/login">
+          <Nav className="me-auto d-flex align-items-center">
+            <Link
+              className="mx-4 text-decoration-none text-body-secondary fw-medium"
+              to="/"
+            >
               Login
-            </Nav.Link>
-            <Nav.Link className="mx-2 px-2" href="/register">
+            </Link>
+            <Link
+              className="mx-4 text-decoration-none text-body-secondary fw-medium"
+              to="/register"
+            >
               Register
-            </Nav.Link>
-            <Nav.Link className="mx-2 px-2" href="/addproduct">
+            </Link>
+            <Link
+              className="mx-4 text-decoration-none text-body-secondary fw-medium"
+              to="/addproduct"
+            >
               Add Product
-            </Nav.Link>
-            <Nav.Link className="mx-2 px-2" href="/updateproduct">
+            </Link>
+            <Link
+              className="mx-4 text-decoration-none text-body-secondary fw-medium"
+              to="/updateproduct"
+            >
               Update Product
-            </Nav.Link>
-            <Nav.Link className="mx-2 px-2" href="/products">
+            </Link>
+            <Link
+              className="mx-4 text-decoration-none text-body-secondary fw-medium"
+              to="/products"
+            >
               Product List
-            </Nav.Link>
+            </Link>
             <NavDropdown title="" id="collapsible-nav-dropdown">
               {/* <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
