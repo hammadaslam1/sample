@@ -14,11 +14,11 @@ function App() {
       {/* <Header /> */}
       {/* <Navigation /> */}
       {/* <Lab07 /> */}
-      <EcomRouter />
+      {/* <EcomRouter /> */}
       {/* <Lab08 /> */}
       {/* <Homework /> */}
       {/* <Test /> */}
-      {/* hello world */}
+      hello world
       {/* <button>hello</button> */}
     </div>
   );
